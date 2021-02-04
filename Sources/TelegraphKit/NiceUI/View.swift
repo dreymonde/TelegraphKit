@@ -22,3 +22,15 @@ extension UIView {
         configure(view)
     }
 }
+
+@discardableResult
+func with<Obj: AnyObject>(_ object: Obj, _ block: (Obj) -> Void) -> Obj {
+    block(object)
+    return object
+}
+
+@discardableResult
+func withMany<Obj: AnyObject>(_ objects: [Obj], _ block: (Obj) -> Void) -> [Obj] {
+    objects.forEach(block)
+    return objects
+}

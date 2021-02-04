@@ -34,6 +34,14 @@ public enum TelegraphURL {
 public final class TelegraphViewController: UIViewController {
     
     public struct Appearance {
+        public init(fontStyle: TelegraphViewController.Appearance.FontStyle, hideAuthor: Bool, darkModeSupport: Bool = true, disableImageInteraction: Bool = true, disableSelection: Bool = false) {
+            self.fontStyle = fontStyle
+            self.hideAuthor = hideAuthor
+            self.darkModeSupport = darkModeSupport
+            self.disableImageInteraction = disableImageInteraction
+            self.disableSelection = disableSelection
+        }
+        
         public static var defaultAppearance: Appearance = .appleSystem
         
         public var fontStyle: FontStyle
@@ -41,12 +49,13 @@ public final class TelegraphViewController: UIViewController {
         /// When `true`, the "Author" block beneath the Title of the article will be hidden
         public var hideAuthor: Bool
         
+        /// Defaults to `true`
         public var darkModeSupport = true
         
-        /// Telegraph has a weird behavior when tapping on an image will cause the whole article to scroll a little bit. Set this to `true` to disable this behavior
+        /// Telegraph has a weird behavior when tapping on an image will cause the whole article to scroll a little bit. Set this to `true` to disable this behavior. Defaults to `true`
         public var disableImageInteraction = true
         
-        /// Set this to `true` to disable the ability to select text
+        /// Set this to `true` to disable the ability to select text. Defaults to `false`
         public var disableSelection = false
         
         public static let telegraph = Appearance(fontStyle: .telegraph, hideAuthor: false)
@@ -55,7 +64,7 @@ public final class TelegraphViewController: UIViewController {
         public enum FontStyle { case telegraph, appleSystem }
     }
     
-    @ReturningDelegated2 public var decideNavigationPolicy: (TelegraphViewController, WKNavigationAction) -> WKNavigationActionPolicy?
+    public var decideNavigationPolicy: (TelegraphViewController, WKNavigationAction) -> WKNavigationActionPolicy? = { _, _ in nil }
     
     public let loadingIndicator = UIActivityIndicatorView(style: .large)
     let failedView = EmptyStateView(contents: .init(elements: [
