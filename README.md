@@ -15,6 +15,8 @@
 Built at **[Nice Photon](https://nicephoton.com)**.  
 Maintainer: [@dreymonde](https://github.com/dreymonde)
 
+Huge thanks to [@danielpunkass](https://github.com/danielpunkass) for his post ["Supporting Dark Mode: In-App Web Content"](https://indiestack.com/2018/10/supporting-dark-mode-in-app-web-content/), it helped us tremendously!
+
 ## Usage
 
 1. Create a post on [telegra.ph](https://telegra.ph). There is no need to create an account or configure anything. Tap "PUBLISH" and copy the link.
