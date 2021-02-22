@@ -2,7 +2,7 @@
 
 <img src="_Media/icon.png" width="70">
 
-> **[Nice Photon](https://nicephoton.com) is available for hire!** Talk to us if you have any iOS app development needs. We have 10+ years of experience making iOS apps for top Silicon Valley companies. Reach out at [starback@nicephoton.com](mailto:starback@nicephoton.com)
+> **[Nice Photon](https://nicephoton.com) is available for hire!** Talk to us if you have any iOS app development needs. We have 10+ years of experience making iOS apps for top Silicon Valley companies. Reach out at [hi@nicephoton.com](mailto:hi@nicephoton.com)
 
 **TelegraphKit** allows you to show web-content from [telegra.ph](https://telegra.ph) in a way that looks & feels native on an iOS device.
 
