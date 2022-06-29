@@ -2,8 +2,6 @@
 
 <img src="_Media/icon.png" width="70">
 
-> **[Nice Photon](https://nicephoton.com) is available for hire!** Talk to us if you have any iOS app development needs. We have 10+ years of experience making iOS apps for top Silicon Valley companies. Reach out at [hi@nicephoton.com](mailto:hi@nicephoton.com)
-
 **TelegraphKit** allows you to show web-content from [telegra.ph](https://telegra.ph) in a way that looks & feels native on an iOS device.
 
 ![TelegraphKit](_Media/banner.png)
@@ -12,7 +10,6 @@
 
 **Telegraph** is "a publishing tool that lets you create richly formatted posts with photos and all sorts of embedded stuff". It's main advantage is that you can create posts in seconds, with no need for an account and no configuration. And then using **TelegraphKit** you can easily show these posts in your app.
 
-Built at **[Nice Photon](https://nicephoton.com)**.  
 Maintainer: [@dreymonde](https://github.com/dreymonde)
 
 Huge thanks to [@danielpunkass](https://github.com/danielpunkass) for his post ["Supporting Dark Mode: In-App Web Content"](https://indiestack.com/2018/10/supporting-dark-mode-in-app-web-content/), it helped us tremendously!
