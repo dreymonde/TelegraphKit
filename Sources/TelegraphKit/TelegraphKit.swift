@@ -89,7 +89,7 @@ public final class TelegraphViewController: UIViewController {
         self.init(telegraphURL: .postID(postID), appearance: appearance, script: { AppearanceScript(appearance: $0.appearance, traits: $0.traitCollection) })
     }
     
-    fileprivate init(telegraphURL: TelegraphURL, appearance: Appearance, script: @escaping (TelegraphViewController) -> AppearanceScript) {
+    internal init(telegraphURL: TelegraphURL, appearance: Appearance, script: @escaping (TelegraphViewController) -> AppearanceScript) {
         self.telegraphURL = telegraphURL
         self.appearance = appearance
         self._appearanceScript = script
@@ -272,7 +272,8 @@ extension TelegraphViewController {
             """)
                 .appending(.applyStyle(name: "RemovingBottomBlock", css: "aside.tl_article_buttons { display: none ! important }"))
                 .appending(.applyStyle(name: "RemovingTopPadding", css: "div.tl_page { padding: 3px 0 ! important }"))
-                .appending(.applyStyle(name: "Hide404CreateNewButton", css: "a.button.create_button { display: none ! important }"))
+                .appending(.hideElementStyle(name: "Hide404CreateNewButton", element: "a.button.create_button"))
+                .appending(.hideElementStyle(name: "HideReportThisPageFooter", element: "div.tl_page_footer"))
         }
         
         public static func applyStyle(name: String, css: String) -> AppearanceScript {
@@ -292,9 +293,16 @@ extension TelegraphViewController {
             css: "p { font-family: -apple-system ! important } h1 { font-family: -apple-system ! important } h2 { font-family: -apple-system ! important } h3 { font-family: -apple-system ! important } h4 { font-family: -apple-system ! important } aside { font-family: -apple-system ! important } blockquote { font-family: -apple-system ! important } li { font-family: -apple-system ! important } time { font-family: -apple-system ! important } a { font-family: -apple-system ! important } li:before { margin: -1.75px 0 0 -78px ! important } figcaption { font-family: -apple-system ! important }"
         )
         
-        public static let hideAuthorStyle = AppearanceScript.applyStyle(
+        public static func hideElementStyle(name: String, element: String) -> AppearanceScript {
+            .applyStyle(
+                name: name,
+                css: "\(element) { display: none ! important }"
+            )
+        }
+        
+        public static let hideAuthorStyle = AppearanceScript.hideElementStyle(
             name: "HideAuthor",
-            css: "address { display: none ! important }"
+            element: "address"
         )
         
         public static let disableImageInteractionStyle = AppearanceScript.applyStyle(
