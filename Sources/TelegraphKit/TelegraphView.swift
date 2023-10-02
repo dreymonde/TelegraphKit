@@ -68,7 +68,13 @@ fileprivate struct DismissableTelegraphView: SwiftUI.View {
 
 extension TelegraphView {
     @available(iOS 15.0, *)
-    public func dismissable(_ doneButtonTitle: String = "Done") -> some SwiftUI.View {
+    public func dismissable(doneButtonTitle: String = "Done") -> some SwiftUI.View {
         DismissableTelegraphView(telegraphView: self, doneButtonTitle: doneButtonTitle)
+    }
+    
+    @available(iOS 15.0, *)
+    @available(*, deprecated, renamed: "dismissable(doneButtonTitle:)")
+    public func dismissable(_ doneButtonTitle: String = "Done") -> some SwiftUI.View {
+        self.dismissable(doneButtonTitle: doneButtonTitle)
     }
 }

@@ -89,8 +89,56 @@ To change the default appearance globally, you can modify `TelegraphViewControll
 TelegraphViewController.Appearance.defaultAppearance = .telegraph
 ```
 
+### SwiftUI
+
+Since version 0.1.0, TelegraphKit provides a `TelegraphView` for SwiftUI
+
+```swift
+TelegraphView(
+    postID: "<YOUR-POST-ID>",
+    appearance: .appleSystem // optional
+)
+```
+
+To automatically add "Done" button at the top right of the screen, use `.dismissable()`:
+
+```swift
+TelegraphView(
+    postID: "<YOUR-POST-ID>",
+    appearance: .appleSystem // optional
+)
+.dismissable() // will show "Done"
+```
+
+```swift
+.dismissable(doneButtonTitle: "Cancel") // optional: customize done button title
+```
+
+Full usage example:
+
+```swift
+struct ExampleView: View {
+    @State var showWebPage: Bool
+    
+    var body: some View {
+        ZStack {
+            Button("Open Telegraph") {
+                showWebPage = true
+            }
+        }
+        .sheet(isPresented: $showWebPage) {
+            TelegraphView(
+                postID: "<YOUR-POST-ID>",
+                appearance: .appleSystem // optional
+            )
+            .dismissable()
+        }
+    }
+}
+```
+
 ## Installation
 
 ### Swift Package Manager
 1. Click File &rarr; Swift Packages &rarr; Add Package Dependency.
-2. Enter `http://github.com/nicephoton/TelegraphKit.git`.
+2. Enter `http://github.com/dreymonde/TelegraphKit.git`.
