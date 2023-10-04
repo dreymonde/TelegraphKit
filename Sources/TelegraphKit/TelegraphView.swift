@@ -63,6 +63,7 @@ fileprivate struct DismissableTelegraphView: SwiftUI.View {
                 }
                 .font(.body.bold())
             }
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -74,7 +75,7 @@ extension TelegraphView {
     
     @available(iOS 15.0, *)
     @available(*, deprecated, renamed: "dismissable(doneButtonTitle:)")
-    public func dismissable(_ doneButtonTitle: String = "Done") -> some SwiftUI.View {
+    public func dismissable(_ doneButtonTitle: String) -> some SwiftUI.View {
         self.dismissable(doneButtonTitle: doneButtonTitle)
     }
 }
